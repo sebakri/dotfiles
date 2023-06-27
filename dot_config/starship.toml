@@ -1,6 +1,7 @@
 format = """
 [](#9A348E)\
-[$os  $hostname ](bg:#9A348E)\
+$os\
+$hostname\
 [](bg:#DA627D fg:#9A348E)\
 $directory\
 [](fg:#DA627D bg:#FCA17D)\
@@ -128,17 +129,17 @@ style = "bg:#33658A"
 format = '[ ♥ $time ]($style)'
 
 [os.symbols]
-Fedora = ""
+Fedora = ""
 Windows = ""
 
 [hostname]
 style = "bg:#9A348E"
-format = '[$hostname]($style)'
+format = '[ $hostname]($style)'
 ssh_only = false
 disabled = false
 
 [status]
 disabled = false
 format = '[$symbol]($style)'
-success_symbol = "[](fg:#06969A)"
-symbol = "[](fg:#FCA17D)"
+success_symbol = "[ $status ](fg:#06969A)"
+symbol = "[ $status ](fg:#FCA17D)"
