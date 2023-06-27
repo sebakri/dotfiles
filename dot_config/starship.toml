@@ -134,7 +134,7 @@ Windows = ""
 
 [hostname]
 style = "bg:#9A348E"
-format = '[ $hostname]($style)'
+format = '[ $hostname ]($style)'
 ssh_only = false
 disabled = false
 
