@@ -19,6 +19,11 @@ $time\
  $status \
 """
 
+[nix_shell]
+style = "bg:#06969A fg:#222e35"
+format = '[ $state \($name\) ]($style)'
+
+
 # You can also replace your username with a neat symbol like   or disable this
 # and use the os module below
 [username]
