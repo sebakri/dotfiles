@@ -1,21 +1,21 @@
 format = """
 [](#9A348E)\
-$os\
-$hostname\
+[$os $hostname ](bg:#9A348E fg:#9A348E)\
 [](bg:#DA627D fg:#9A348E)\
 $directory\
-[](fg:#DA627D bg:#FCA17D)\
-$git_branch\
-$git_status\
-[](fg:#FCA17D bg:#86BBD8)\
+[](bg:#FCA17D fg:#DA627D )\
+[$git_branch$git_status](bg:#FCA17D fg:#38251D)\
+[](bg:#86BBD8 fg:#FCA17D)\
 $c\
 $golang\
 $nodejs\
 $rust\
-[](fg:#86BBD8 bg:#06969A)\
+[](bg:#06969A fg:#86BBD8)\
 $docker_context\
 $nix_shell\
-[](fg:#06969A) 
+[](fg:#06969A bg:#33658A)\
+$time\
+[](fg:#33658A) 
  $status \
 """
 
@@ -32,7 +32,7 @@ disabled = false
 # represents the current operating system
 [os]
 style = "bg:#9A348E"
-disabled = false # Disabled by default
+disabled = false     # Disabled by default
 
 [directory]
 style = "bg:#DA627D"
@@ -55,7 +55,7 @@ truncation_symbol = "…/"
 
 [c]
 symbol = " "
-style = "bg:#86BBD8"
+style = "bg:#86BBD8 fg:#222e35"
 format = '[ $symbol ($version) ]($style)'
 
 [docker_context]
@@ -65,68 +65,68 @@ format = '[ $symbol $context ]($style) $path'
 
 [elixir]
 symbol = " "
-style = "bg:#86BBD8"
+style = "bg:#86BBD8 fg:#222e35"
 format = '[ $symbol ($version) ]($style)'
 
 [elm]
 symbol = " "
-style = "bg:#86BBD8"
+style = "bg:#86BBD8 fg:#222e35"
 format = '[ $symbol ($version) ]($style)'
 
 [git_branch]
 symbol = ""
-style = "bg:#FCA17D"
+style = "bg:#FCA17D fg:#38251"
 format = '[ $symbol $branch ]($style)'
 
 [git_status]
-style = "bg:#FCA17D"
+style = "bg:#FCA17D fg:#38251"
 format = '[$all_status$ahead_behind ]($style)'
 
 [golang]
 symbol = " "
-style = "bg:#86BBD8"
+style = "bg:#86BBD8 fg:#222e35"
 format = '[ $symbol ($version) ]($style)'
 
 [haskell]
 symbol = " "
-style = "bg:#86BBD8"
+style = "bg:#86BBD8 fg:#222e35"
 format = '[ $symbol ($version) ]($style)'
 
 [java]
 symbol = " "
-style = "bg:#86BBD8"
+style = "bg:#86BBD8 fg:#222e35"
 format = '[ $symbol ($version) ]($style)'
 
 [julia]
 symbol = " "
-style = "bg:#86BBD8"
+style = "bg:#86BBD8 fg:#222e35"
 format = '[ $symbol ($version) ]($style)'
 
 [nodejs]
 symbol = ""
-style = "bg:#86BBD8"
+style = "bg:#86BBD8 fg:#222e35"
 format = '[ $symbol ($version) ]($style)'
 
 [nim]
 symbol = "󰆥 "
-style = "bg:#86BBD8"
+style = "bg:#86BBD8 fg:#222e35"
 format = '[ $symbol ($version) ]($style)'
 
 [rust]
 symbol = ""
-style = "bg:#86BBD8"
+style = "bg:#86BBD8 fg:#222e35"
 format = '[ $symbol ($version) ]($style)'
 
 [scala]
 symbol = " "
-style = "bg:#86BBD8"
+style = "bg:#86BBD8 fg:#222e35"
 format = '[ $symbol ($version) ]($style)'
 
 [time]
-disabled = true
-time_format = "%R" # Hour:Minute Format
+disabled = false
+time_format = "%R"             # Hour:Minute Format
 style = "bg:#33658A"
-format = '[ ♥ $time ]($style)'
+format = '[  $time ]($style)'
 
 [os.symbols]
 Fedora = ""
@@ -134,7 +134,7 @@ Windows = ""
 
 [hostname]
 style = "bg:#9A348E"
-format = '[ $hostname]($style)'
+format = '[$hostname]($style)'
 ssh_only = false
 disabled = false
 
