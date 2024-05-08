@@ -1,5 +1,6 @@
 -- Pull in the wezterm API
 local wezterm = require("wezterm")
+local colorscheme = require("colorscheme")
 
 -- This table will hold the configuration.
 local config = {}
@@ -13,7 +14,7 @@ end
 -- This is where you actually apply your config choices
 
 -- For example, changing the color scheme:
-config.color_scheme = "Catppuccin Frappe"
+config.color_scheme = colorscheme.color_scheme
 config.font = wezterm.font("SpaceMono Nerd Font Propo")
 config.font_size = 15
 config.harfbuzz_features = { "calt=0" }
@@ -29,7 +30,7 @@ config.keys = {
 }
 
 -- Spawn pwsh as the default shell
-config.default_prog = { "C:/Program Files/WindowsApps/Microsoft.PowerShell_7.3.4.0_x64__8wekyb3d8bbwe/pwsh.exe" }
+config.default_prog = { "pwsh", "-nologo" }
 
 -- and finally, return the configuration to wezterm
 return config
