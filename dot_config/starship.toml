@@ -53,7 +53,7 @@ disabled = false
 
 [status]
 disabled = false
-style = 'bg:base fg:red'
+style = 'fg:red'
 format = "[$int]($style)"
 
 [kubernetes]
