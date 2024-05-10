@@ -1,0 +1,18 @@
+[user]
+	email = {{ .email | quote }}
+	name = Sebastian Krieger
+[rerere]
+	enabled = true
+[init]
+	defaultBranch = main
+[push]
+	autoSetupRemote = true
+[pull]
+	rebase = false
+[merge]
+  tool = diffview
+[mergetool]
+  prompt = false
+  keepBackup = false
+[mergetool "diffview"]
+  cmd = nvim -n -c "DiffviewOpen" "$MERGE"
