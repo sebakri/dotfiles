@@ -30,7 +30,7 @@ config.keys = {
 }
 
 -- Spawn pwsh as the default shell
-config.default_prog = { "pwsh", "-nologo" }
+config.default_prog = { "nu" }
 
 -- and finally, return the configuration to wezterm
 return config
