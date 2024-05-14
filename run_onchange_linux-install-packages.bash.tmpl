@@ -7,4 +7,11 @@ brew {{ . | quote }}
 {{ end -}}
 EOF
 
+{{ if eq .chezmoi.osRelease.id "fedora" -}}
+{{ range .packages.linux.fedora.copr -}}
+sudo dnf copr enable {{ .repo | quote }}
+sudo dnf install {{ .name | quote }}
+{{ end -}}
+{{ end -}}
+
 {{ end -}}
