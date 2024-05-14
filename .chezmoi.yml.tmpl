@@ -1,0 +1,8 @@
+{{- $email := promptString "Email" -}}
+
+cd:
+  command: nu
+
+data:
+    email: {{ $email | quote }}
+
