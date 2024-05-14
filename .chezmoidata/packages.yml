@@ -1,0 +1,9 @@
+packages:
+  windows:
+    scoop:
+      - "neovim"
+      - "nu"
+  linux:
+    homebrew:
+      - "nvim"
+      - "nushell"
