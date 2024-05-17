@@ -3,7 +3,16 @@ packages:
     scoop:
       - "neovim"
       - "nu"
+      - "wezterm"
+      - "starship"
+      - "zoxide"
   linux:
     homebrew:
       - "nvim"
       - "nushell"
+      - "starship"
+      - "zoxide"
+    fedora:
+      copr:
+        - name: "wezterm"
+          repo: "wezfurlong/wezterm-nightly"
