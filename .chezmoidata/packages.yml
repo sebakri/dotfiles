@@ -6,13 +6,16 @@ packages:
       - "wezterm"
       - "starship"
       - "zoxide"
+      - "lazygit"
   linux:
     homebrew:
-      - "nvim"
       - "nushell"
       - "starship"
       - "zoxide"
+      - "neovim"
+      - "lazygit"
     fedora:
       copr:
         - name: "wezterm"
           repo: "wezfurlong/wezterm-nightly"
+      dnf: []
