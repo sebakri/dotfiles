@@ -30,7 +30,9 @@ config.keys = {
 }
 
 -- Spawn pwsh as the default shell
-config.default_prog = { "nu" }
+config.default_prog = { "/home/linuxbrew/.linuxbrew/bin/nu" }
 
+-- Fixes missing window decorations under Fedora 40
+config.enable_wayland = false
 -- and finally, return the configuration to wezterm
 return config
