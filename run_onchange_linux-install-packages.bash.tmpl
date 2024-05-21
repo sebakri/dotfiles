@@ -1,16 +1,37 @@
 {{ if eq .chezmoi.os "linux" -}}
 #!/bin/bash
 
+echo "*****************************"
+echo "Install Homebrew"
+echo "*****************************"
+NONINTERACTIVE=1 /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
+
+(echo; echo 'eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"') >> /home/$USER/.bashrc
+eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"
+sudo yum groupinstall -y 'Development Tools'
+
 brew bundle --no-lock --file=/dev/stdin <<EOF
+brew "gcc"
 {{ range .packages.linux.homebrew -}}
 brew {{ . | quote }}
 {{ end -}}
 EOF
 
+
 {{ if eq .chezmoi.osRelease.id "fedora" -}}
 {{ range .packages.linux.fedora.copr -}}
-sudo dnf copr enable {{ .repo | quote }}
-sudo dnf install {{ .name | quote }}
+echo "*****************************"
+echo "Install {{ .name }}"
+echo "*****************************"
+sudo dnf copr enable -y {{ .repo | quote }}
+sudo dnf install -y {{ .name | quote }}
+{{ end -}}
+
+{{ range .packages.linux.fedora.dnf -}}
+echo "*****************************"
+echo "Install {{ . }}"
+echo "*****************************"
+sudo dnf install -y {{ . | quote }}
 {{ end -}}
 {{ end -}}
 
