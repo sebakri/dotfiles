@@ -1,11 +1,19 @@
 {{- $email := promptString "Email" -}}
 
+edit:
+  command: nvim
+
 cd:
   command: nu
 
 merge:
   command: "nvim"
   args: ["-d", {{`"{{ .Destination }}"`}}, {{`"{{ .Source }}"`}}, {{`"{{ .Target }}"`}}]
+
+interpreters:
+  ps1:
+    command: "pwsh"
+    args: ["-NoLogo"]
 
 data:
   email: {{ $email | quote }}
