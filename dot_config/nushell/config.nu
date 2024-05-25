@@ -875,3 +875,7 @@ $env.config = {
 
 use ~/.cache/starship/init.nu
 source ~/.cache/zoxide/init.nu
+
+if ($nu.env-path | path dirname | path join 'config.local.nu' | path exists) {
+  source ($nu.env-path | path dirname | path join 'config.local.nu')
+}
