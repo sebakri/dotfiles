@@ -7,6 +7,7 @@ packages:
       - "starship"
       - "zoxide"
       - "lazygit"
+      - "go"
   linux:
     homebrew:
       - "nushell"
@@ -15,6 +16,7 @@ packages:
       - "neovim"
       - "lazygit"
       - "direnv"
+      - "go"
     fedora:
       copr:
         - name: "wezterm"
