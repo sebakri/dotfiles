@@ -876,6 +876,5 @@ $env.config = {
 use ~/.cache/starship/init.nu
 source ~/.cache/zoxide/init.nu
 
-if ($nu.config-path | path dirname | path join 'config.local.nu' | path exists) {
-  source ($nu.config-path | path dirname | path join 'config.local.nu')
-}
+const NU_LOCAL_CONFIG_FILE = $"($nu.home-path)/.nurc"
+if ($NU_LOCAL_CONFIG_FILE | path exists) { $env.NU_LOCAL_CONFIG_FILE = $NU_LOCAL_CONFIG_FILE; source $NU_LOCAL_CONFIG_FILE } 
