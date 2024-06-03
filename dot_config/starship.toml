@@ -44,6 +44,7 @@ format = '[$all_status$ahead_behind ]($style)'
 [golang]
 style = "fg:base bg:sapphire"
 version_format = '${major}.${minor}'
+not_capable_style = 'fg:red bg:sapphire'
 format = '[󰟓 $version ]($style)'
 
 [character]
