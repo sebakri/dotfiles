@@ -1,7 +1,6 @@
 {{ if eq .chezmoi.os "darwin" -}}
 #!/bin/bash
 
-
 echo "*****************************"
 echo "Install dependencies with MacPorts"
 echo "*****************************"
@@ -13,3 +12,5 @@ echo "Install {{ .name }}"
 echo "*****************************"
 sudo port install {{ .name | quote }}
 {{ end -}}
+
+{{- end }}
