@@ -1,4 +1,15 @@
 {{ if eq .chezmoi.os "darwin" -}}
 #!/bin/bash
 
+
+echo "*****************************"
+echo "Install dependencies with MacPorts"
+echo "*****************************"
+command -v foo >/dev/null 2>&1 || { echo >&2 "Can't find MacPorts.  Aborting."; exit 1; }
+
+{{ range .packages.darwin.macports -}}
+echo "*****************************"
+echo "Install {{ .name }}"
+echo "*****************************"
+sudo port install {{ .name | quote }}
 {{ end -}}

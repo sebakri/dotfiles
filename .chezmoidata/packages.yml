@@ -22,3 +22,13 @@ packages:
         - name: "wezterm"
           repo: "wezfurlong/wezterm-nightly"
       dnf: []
+  darwin:
+    macports:
+      - "nushell"
+      - "starship"
+      - "zoxide"
+      - "neovim"
+      - "lazygit"
+      - "direnv"
+      - "go"
+      - "wezterm"
