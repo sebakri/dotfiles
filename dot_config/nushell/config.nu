@@ -234,7 +234,7 @@ $env.config = {
     use_ansi_coloring: true
     bracketed_paste: true # enable bracketed paste, currently useless on windows
     edit_mode: emacs # emacs, vi
-    shell_integration: false # enables terminal shell integration. Off by default, as some terminals have issues with this.
+    shell_integration: {}
     render_right_prompt_on_last_line: false # true or false to enable or disable right prompt to be rendered on last line of the prompt.
     use_kitty_protocol: false # enables keyboard enhancement protocol implemented by kitty console, only if your terminal support this.
     highlight_resolved_externals: false # true enables highlighting of external commands in the repl resolved by which.
@@ -875,6 +875,9 @@ $env.config = {
 
 use ~/.cache/starship/init.nu
 source ~/.cache/zoxide/init.nu
+
+alias lg = lazygit
+alias cm = chezmoi
 
 const NU_LOCAL_CONFIG_FILE = $"($nu.home-path)/.nurc"
 if ($NU_LOCAL_CONFIG_FILE | path exists) { $env.NU_LOCAL_CONFIG_FILE = $NU_LOCAL_CONFIG_FILE; source $NU_LOCAL_CONFIG_FILE } 
